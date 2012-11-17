@@ -1,0 +1,347 @@
+@charset "UTF-8";
+
+/* Benguiat Book font descriptions */
+@font-face {
+   font-family: Benguiat;
+   font-style: normal;
+   font-weight: normal;
+   font-stretch: normal;
+   src: url("http://www.orange-road.com/fonts/BenguiatProITC-Book.otf") format("opentype");
+}
+@font-face {
+   font-family: Benguiat;
+   font-style: italic;
+   font-weight: normal;
+   font-stretch: normal;
+   src: url("http://www.orange-road.com/fonts/BenguiatProITC-BookItalic.otf") format("opentype");
+}
+@font-face {
+   font-family: Benguiat;
+   font-style: normal;
+   font-weight: normal;
+   font-stretch: condensed;
+   src: url("http://www.orange-road.com/fonts/BenguiatProITC-BookCond.otf") format("opentype");
+}
+@font-face {
+   font-family: Benguiat;
+   font-style: italic;
+   font-weight: normal;
+   font-stretch: condensed;
+   src: url("http://www.orange-road.com/fonts/BenguiatProITC-BookCondIt.otf") format("opentype");
+}
+
+/* Benguiat Medium font descriptions */
+@font-face {
+   font-family: Benguiat;
+   font-style: normal;
+   font-weight: 600;
+   font-stretch: normal;
+   src: url("http://www.orange-road.com/fonts/BenguiatProITC-Medium.otf") format("opentype");
+}
+@font-face {
+   font-family: Benguiat;
+   font-style: italic;
+   font-weight: 600;
+   font-stretch: normal;
+   src: url("http://www.orange-road.com/fonts/BenguiatProITC-MediumItalic.otf") format("opentype");
+}
+@font-face {
+   font-family: Benguiat;
+   font-style: normal;
+   font-weight: 600;
+   font-stretch: condensed;
+   src: url("http://www.orange-road.com/fonts/BenguiatProITC-MediumCond.otf") format("opentype");
+}
+@font-face {
+   font-family: Benguiat;
+   font-style: italic;
+   font-weight: 600;
+   font-stretch: condensed;
+   src: url("http://www.orange-road.com/fonts/BenguiatProITC-MediumCondIt.otf") format("opentype");
+}
+
+/* Benguiat Bold font descriptions */
+@font-face {
+   font-family: Benguiat;
+   font-style: normal;
+   font-weight: bold;
+   font-stretch: normal;
+   src: url("http://www.orange-road.com/fonts/BenguiatProITC-Bold.otf") format("opentype");
+}
+@font-face {
+   font-family: Benguiat;
+   font-style: italic;
+   font-weight: bold;
+   font-stretch: normal;
+   src: url("http://www.orange-road.com/fonts/BenguiatProITC-BoldItalic.otf") format("opentype");
+}
+@font-face {
+   font-family: Benguiat;
+   font-style: normal;
+   font-weight: bold;
+   font-stretch: condensed;
+   src: url("http://www.orange-road.com/fonts/BenguiatProITC-BoldCond.otf") format("opentype");
+}
+@font-face {
+   font-family: Benguiat;
+   font-style: italic;
+   font-weight: bold;
+   font-stretch: condensed;
+   src: url("http://www.orange-road.com/fonts/BenguiatProITC-BoldCondIt.otf") format("opentype");
+}
+
+/* Benguiat Gothic font descriptions */
+@font-face {
+   font-family: BenguiatGothic;
+   font-style: normal;
+   font-weight: normal;
+   font-stretch: normal;
+   src: url("http://www.orange-road.com/fonts/BenguiatGothicStd-Book.otf") format("opentype");
+}
+@font-face {
+   font-family: BenguiatGothic;
+   font-style: oblique;
+   font-weight: normal;
+   font-stretch: normal;
+   src: url("http://www.orange-road.com/fonts/BenguiatGothicStd-BookObl.otf") format("opentype");
+}
+
+/* Benguiat Gothic Medium font descriptions */
+@font-face {
+   font-family: BenguiatGothic;
+   font-style: normal;
+   font-weight: 600;
+   font-stretch: normal;
+   src: url("http://www.orange-road.com/fonts/BenguiatGothicStd-Medium.otf") format("opentype");
+}
+@font-face {
+   font-family: BenguiatGothic;
+   font-style: oblique;
+   font-weight: 600;
+   font-stretch: normal;
+   src: url("http://www.orange-road.com/fonts/BenguiatGothicStd-MediumObl.otf") format("opentype");
+}
+
+/* Benguiat Gothic Bold font descriptions */
+@font-face {
+   font-family: BenguiatGothic;
+   font-style: normal;
+   font-weight: bold;
+   font-stretch: normal;
+   src: url("http://www.orange-road.com/fonts/BenguiatGothicStd-Bold.otf") format("opentype");
+}
+@font-face {
+   font-family: BenguiatGothic;
+   font-style: oblique;
+   font-weight: bold;
+   font-stretch: normal;
+   src: url("http://www.orange-road.com/fonts/BenguiatGothicStd-BoldObl.otf") format("opentype");
+}
+
+/* Benguiat Gothic Heavy font descriptions */
+@font-face {
+   font-family: BenguiatGothic;
+   font-style: normal;
+   font-weight: 800;
+   font-stretch: normal;
+   src: url("http://www.orange-road.com/fonts/BenguiatGothicStd-Heavy.otf") format("opentype");
+}
+@font-face {
+   font-family: BenguiatGothic;
+   font-style: oblique;
+   font-weight: 800;
+   font-stretch: normal;
+   src: url("http://www.orange-road.com/fonts/BenguiatGothicStd-HeavyObl.otf") format("opentype");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+	
+body {
+	font: 100% BenguiatGothic, Verdana, Arial, Helvetica, sans-serif;
+	background: #CCCCCC;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+}
+
+/* Tips for Elastic layouts 
+1. Since the elastic layouts overall sizing is based on the user's default fonts size, they are more unpredictable. Used correctly, they are also more accessible for those that need larger fonts size since the line length remains proportionate.
+2. Sizing of divs in this layout are based on the 100% font size in the body element. If you decrease the text size overall by using a font-size: 80% on the body element or the #container, remember that the entire layout will downsize proportionately. You may want to increase the widths of the various divs to compensate for this.
+3. If font sizing is changed in differing amounts on each div instead of on the overall design (ie: #sidebar1 is given a 70% font size and #mainContent is given an 85% font size), this will proportionately change each of the divs overall size. You may want to adjust based on your final font sizing.
+*/
+.oneColElsCtrHdr #container {
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	width: 55em;
+	border: 1px solid #000000;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+	background-color: #666666;
+}
+.oneColElsCtrHdr #header {
+	background: #FFFFFF;  /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
+	color: #000000;
+} 
+.oneColElsCtrHdr #header h1 {
+	margin: 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+	padding-top: 10px;
+	padding-right: 0;
+	padding-bottom: 0px;
+	padding-left: 0;
+}
+.oneColElsCtrHdr #sitetitle {
+	color: #FFFFFF;
+	background-color: #FF9933;
+	text-align: right;
+	padding-bottom: 1em;
+	padding-right: 2em;
+}
+.oneColElsCtrHdr #navbar {
+	background-color: #CCCCCC;
+	margin-top: 6pt;
+	font-size: 10pt;
+	padding-top: 2px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 0px;
+}
+.oneColElsCtrHdr #navbar li {
+	padding: 5px;
+	display: inline;
+	margin-top: 1px;
+	font-size: 10pt;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+.oneColElsCtrHdr #navbar a{
+	text-decoration: none;
+	text-shadow: 0px 1px 1px white;
+	padding: 2px;
+	color: #000000;
+}
+.oneColElsCtrHdr #navbar a:hover, .oneColElsCtrHdr #navbar a:focus, .oneColElsCtrHdr #navbar a:active {
+	padding: 1px;
+	color: white;
+	text-shadow: 0px -1px 1px #A1A1A1;
+	border: 1px solid #000000;
+	background-color: #FF9933;
+}
+.oneColElsCtrHdr #mainContent {
+	padding: 1em; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+	background: #FFFFFF;
+}
+.oneColElsCtrHdr #mainContent h1 {
+	font-size: 1.5em;
+	font-weight: normal;
+	margin: 1em 0;
+}
+.oneColElsCtrHdr #mainContent h2 {
+	font-size: 1.313em;
+	font-weight: normal;
+	margin: 1em 0;
+}
+.oneColElsCtrHdr #mainContent h3 {
+	font-size: 1.125em;
+	font-weight: normal;
+	margin: 1em 0;
+}
+.oneColElsCtrHdr #mainContent h4, .oneColElsCtrHdr #mainContent h5, .oneColElsCtrHdr #mainContent h6 {
+	font-size: 12px;
+	font-weight: normal;
+	margin: 1em 0;
+}
+.oneColElsCtrHdr #mainContent p {
+	font-family: Benguiat, Georgia, "Times New Roman", Times, serif;
+	line-height: 1.25em;
+	margin: 1em 0;
+}
+.oneColElsCtrHdr #mainContent hr {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+.oneColElsCtrHdr #mainContent ul {
+	margin: 1em 0;
+}
+.oneColElsCtrHdr #mainContent li {
+	font-family: Benguiat, Georgia, "Times New Roman", Times, serif;
+	line-height: 1.25em;
+	list-style-position: inside;
+	list-style-type: disc;
+}
+.oneColElsCtrHdr #mainContent dl {
+	font-family: Benguiat, Georgia, "Times New Roman", Times, serif;
+	line-height: 1.25em;
+	margin: 1em 0;
+}
+.oneColElsCtrHdr  #mainContent  dd {
+	margin-left: 2em;
+	margin-bottom: .5em;
+}
+.oneColElsCtrHdr #footer {
+	padding: 0 10px; /* this padding matches the left alignment of the elements in the divs that appear above it. */
+	background:#FF9933;
+} 
+.oneColElsCtrHdr #footer p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+	font-size: 10pt;
+	color: #FFFFFF;
+}
+
+a {
+    color: black;
+	text-decoration: underline;
+}
+
+/* Utility classes for floated elements. */
+
+.fltrt { /* this class can be used whenever you wish to float an element to the right side of the page. The floated element must be placed above the element that will display next to it in the source code. */
+float: right;
+margin-left: 8px;
+}
+
+.fltlft { /* this class can be used whenever you wish to float an element left on the page */
+float: left;
+margin-right: 8px;
+}
+
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+clear:both;
+height:0;
+font-size: 1px;
+line-height: 0px;
+}
+
+.center { /* this class can be used whenever you wish to center an element */
+	text-align: center;
+}
+
+.centerdiv {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.thumbnail { /* This class is for image thumbnails on gallery pages. */
+	font-family: Benguiat, Georgia, "Times New Roman", Times, serif;
+	margin: 1 em;
+	height: 170px;
+	width: 150px;
+    float: left;
+	text-align: center;
+}
+.sectionthumb { /* This class is for image thumbnails on the photo index page. */
+	margin: 1 em;
+    float: left;
+	text-align: center;
+	padding: 2em;
+}
+.acronym {
+	font-variant: small-caps;
+}
+.column { /* This class is used for the list of artists on the concert photography page. */
+	float: left;
+	width: 33%;
+	font-family: Benguiat, Georgia, "Times New Roman", Times, serif;
+}

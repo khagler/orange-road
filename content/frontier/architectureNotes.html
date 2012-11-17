@@ -1,0 +1,8 @@
+---
+title: Mail2FM Architecture Notes
+---    
+   
+<p>Instead of checking Mail2FM.data.currentid in a case statement for every script, have stub scripts which automatically refer to the correct client script. This would look something like this:<br /><code>on importMessage ( params )<br />
+Mail2FM.clients.[Mail2FM.data.currentid].importMessage ( params )</code> </p>
+<p>All the client code would be in a table named for the client id, such as <samp>MMan</samp>, located inside the <code>Mail2FM.clients</code> table. This way, I (or other authors) would only need to create a new table for a new client, instead of drastically editing all the existing scripts.</p>
+<p>The client tables would have scripts for all the Mail2FM verbs they support, but each client would not necessarily have to support the full Mail2FM functionality. They could have just the parts they can support, with some sort of error or warning if the stub script tries to call an unsupported script. This would make it easier to have Mail2FM work with weird clients like cc:Mail.</p>

@@ -1,0 +1,13 @@
+---
+title: File Extension Fix
+---
+
+<p>In the &ldquo;stock&rdquo; HTML framework glossaries don&rsquo;t work right if you set a different #fileExtension directive inside an object. The glossPatch entry will still have the file extension specified at the table level. </p>
+<p>The way to fix this is to add two lines to <code>html.buildObject</code>. To make the change, look for the first bundle, the one with the comment saying <samp>make sure f and f name reflect page based directives</samp>. </p>
+<p>Find the line that says: </p>
+<p><code>adrpagetable^.fname = html.getFileName (nameOf (adrobject^))</code> </p>
+<p>Insert a new line in front of this line: </p>
+<p><code>adrpagetable^.url = adrpagetable^.url - adrpagetable^.fname</code> </p>
+<p>Also insert a new line after this line: </p>
+<p><code>adrpagetable^.url = adrpagetable^.url + adrpagetable^.fname</code> </p>
+<p><em>Important note:</em> This fix is specifically for Frontier 4. I don&rsquo;t know if it&rsquo;s required in Frontier 5. It wouldn&rsquo;t surprise me if it was, but I have no information. </p>

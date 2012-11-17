@@ -1,0 +1,25 @@
+---
+title: Frontier Tips and Tricks
+---
+    
+<h2>About This Page</h2>
+<p>This page contains a somewhat disjointed collection of suggestions, tricks, and things to watch out for when doing Frontier programming. Some of the things here seem pretty obvious to me (and presumably other experienced Frontier users), but may not be so obvious to newbies.</p>
+<h2>Avoid Changing the Word Character</h2>
+<p>When you change the word character with <code>string.setWordChar</code> you are making a global change that will affect everything Frontier does. For this reason, it is <strong>very</strong> important that before changing the word character you store the original value in a variable, and set it back as soon as you’re done.</p>
+<p>It’s actually a fairly bad idea to mess with the word character at all, even if you do remember to set it back. Maybe you’ll forget to reset it, or maybe another script that uses it will run while your script has it set to something else. Anything you can do by setting the word character can be done using regex anyway, so you should do it this way.</p>
+<h2>Comment Your Code</h2>
+<p>I’m a firm believer in commenting everything. Extensive comments make your code much easier for others to understand, which is important if you’re planning to release it. They also can help you remember how something you wrote two years and haven’t looked at since worked.</p>
+<p>My rule of thumb for my own code is that if there’s any ambiguity at all as to what a line of code is doing, or why it’s doing it, I comment the line. Probably around half the lines of code I write are commented as a result.</p>
+<h2>Deleting Things in <code>for</code> Loops</h2>
+<p>Suppose you want to loop through every item in a table, do something with it, and then delete the item. You might be inclined to use something like <code>for i = 1 to sizeOf ( theTable )</code>, with the code inside the loop referring to <code>theTable[i]</code>. However, this would result in some of the table entries being missed.</p>
+<p>This problem can occur with lists and strings as well, since you can use an index to get at individual list items or characters in strings. However, I’ll continue using a table as the example. Just keep in mind that this applies to anything that can be accessed using an index.</p>
+<p>For example, suppose you have a table with four entries that you loop through using a <code>for</code> loop like the one above. The first time through, <code>i</code> is 1, so the first entry in the table is processed and deleted. However, now the remaining table entries have an index one less than they did before – what was item 2 is now item 1, etc. Now, the second time through the loop, i is 2, but the item that used to be entry 2 is now entry 1, so it never gets acted on by the code in the loop.</p>
+<p>This problem is easily avoided, though – just start from the bottom of the table instead of the top. Write the loop as <code>for i = sizeOf ( theTable ) downTo 1</code>. This way, deleting the entry <code>theTable[i]</code> will have no effect on the index of the remaining entries in the table, and your loop will get a chance to process all of them.</p>
+<h2>Cross-Version Compatibility</h2>
+<p>There are lots of changes between Frontier 4.x and 5.x that need to be accounted for. Every time your script does something that’s different between versions, use an <code>if</code> statement to check the version, like this: <code>if frontier.version() beginsWith 5</code>.</p>
+<p>The disperal of scripts from the toys suite is an obvious source of problems. Another change which is less noticeable is with <code>target.set</code>. When using this, it’s important to set the target back to whatever it was before when the script exits, but the way to do this has changed. The F5 way is with <code>oldtarget = target.set ( @newTarget )</code>. The F4 version requires an additional step:<br /><code>oldtarget = target.get()<br />
+target.set ( @newTarget )</code> </p>
+<p>Scripts should be released as Frontier 4 object files unless you’re <em>certain</em> that they will only be used by people with Frontier 5. Frontier 5 can handle F4 objects just fine, but going the other way is a significant inconvenience for the Frontier 4 users.</p>
+<h2>Declare Your Variables</h2>
+<p>All local variables should <em>always</em> be declared. Any time you want to use a local variable, don’t just rely on Frontier to create it for you, explicitly declare it with <code>local ( variableName )</code>. This protects you from accidentally trashing some important part of the root by assuming that it’s safe to use a name that’s in the search path, like &ldquo;system,&rdquo; without declaring it as a local variable.</p>
+<p>Another benefit is readability. Someone else reading your code will have a much easier time understanding it if they don’t have to figure out which variables are in scope in a particular block of code.</p>

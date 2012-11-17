@@ -1,0 +1,72 @@
+---
+title: Frontier Page
+---
+ 
+<p><em>Note:</em> This section of my site, like Frontier itself, is basically defunct and is retained only for historical reasons.</p>
+
+<h2>Links</h2>
+<p>Other pages relating to <a href="http://www.scripting.com/frontier/">Frontier</a> at this site. Stuff is slowly being added. 
+</p>
+<ul>
+<li>Various scripts that I’ve written for general release are on my branch of the <a href="http://www.orange-road.com/root/root.html">Low Tech Object Database Server</a>.
+</li>
+<li>I’ve just created a page of <%= tips = @items.find { |i| i.identifier == '/frontier/tips/' }
+                link_to('Frontier Tips and Tricks', tips) %>. These are intended for newbies, but experienced users may find them interesting as well.
+</li>
+<li>I came across an old note in my Newton explaining <%= extensionFix = @items.find { |i| i.identifier == '/frontier/extensionFix/' }
+                link_to('how to modify', extensionFix) %> the Frontier 4 HTML framework so that glosspatch entries deal correctly with different file extensions.
+</li>
+<li>You can download <a href="Frontier.sit.hqx">Frontier 4.2.3</a> here. Frontier is a product of <a href="http://www.userland.com/">UserLand Software</a>, distributed here under the terms of the Frontier license agreement. You should refer to the <a title="Userland’s Frontier site" href="http://www.scripting.com/frontier/">Frontier</a> web site for documentation and support information. Newer and faster computers (a 9600/350 or better) will not be able to use the application included in that package because of a bug that causes Frontier to freeze on launch. People with faster computers will need to download the <a href="ftp://ftp.orange-road.com//khagler/pub/frontier4.1a.sit.hqx">Frontier 4.1a</a> application and replace the Frontier app in the main distribution package with this bug-fix application.
+</li>
+<li>I’ve created an <a href="oldnews.html">old news page</a> for notes and links that are really too outdated to be worth keeping on this page.
+</li>
+</ul>
+<h2>Various Notes</h2>
+<h3>Mail2FM Status</h3>
+<p>The currently shipping version of <a href="http://www.orange-road.com/root/suites/Mail2FM.html">Mail2FM</a> is 1.6.7. This version fixes another bug in the non-regex digest processing code that caused problems with digests that did not have a blank line after the delimeter. Also fixed a bug where the default date and time where not being set correctly.</p>
+<p>After much procrastination, I’ve finally begun actually writing code for Hydra, the next major version of Mail2FM. I’m also writing notes on the new modular plug-in architecture, so that other people will be able to write plug-ins for clients I don’t intend to support personally, such as Mailsmith. Once I’ve got the notes into some sort of coherent order, I’ll put them up here.</p>
+<h4>Wish List</h4>
+<p>These are ideas for the things to add in future versions of Mail2FM. Some of these are my idea, some were suggested by others. The order of this list does not necessarily reflect the priority I give to the items.</p>
+<dl>
+<dt>Add support for <a href="http://www.microsoft.com/Mac/oe/">Outlook Express</a>. (Requested by <a title="Send mail to this person." href="mailto:wilsona@plk.af.mil">Anthony Wilson</a>.)
+</dt>
+<dd>This doesn’t look like it will be too terribly hard, and since somebody else asked for it, I’m giving it the highest priority.
+</dd>
+<dt>Redo the suite’s architecture to use some sort of plug-in system for the various clients.
+</dt>
+<dd>I think this will be necessary to keep the suite from becoming a total mess as support for OE and other clients is added. The current Mail2FM architecture was only intended for a single mail client, and the more I add the harder it will be to maintain and improve the code. This is a pretty high priority item, because the sooner it gets done the less work there will be to convert the existing scripts. You may be interested in my <%= architecture = @items.find { |i| i.identifier == '/frontier/architectureNotes/' }
+                link_to('design notes', architecture)
+            %> on the new architecture.
+</dd>
+<dt>Add a way to automatically import <em>all</em> mailboxes into the Filemaker database. (Requested by <a title="Send mail to this person." href="mailto:A.vanderHelm@cs.tudelft.nl">Aadjan van der Helm</a>.)
+</dt>
+<dd>This would allow people to easily export the entire contents of their mail client’s database into the FMP database.
+</dd>
+<dt>Replace the MacBird cards with custom dialogs.
+</dt>
+<dd>The MacBird card used to create new tasks has been a real pain. An undocumented change in Frontier 5 caused a serious bug with Eudora, and another such change probably caused a second bug, and the card editor is so unstable that it crashes nearly every time I use it. However, the excellent explanation of custom dialogs in <a title="Buy the book from Amazon.com" href="http://www.amazon.com/exec/obidos/ISBN=1565923839">Frontier: The Definitive Guide</a> should be enough for me to replace these troublesome cards with real dialogs.
+</dd>
+<dt>Support <code>’eNot’</code> triggering of message imports.
+</dt>
+<dd>The <code>’eNot’</code> event can be sent by Eudora and Emailer to applications that have registered to recieve them. Every time a message comes in, the event is sent with information on the message. Adding support for importing messages based on an <code>’eNot’</code> event would allow the entire importing process to be automatic.
+</dd>
+<dt>Support message importing from a Newton.
+</dt>
+<dd>I own a MessagePad 2100, and I’d like to be able to easily move mail from it into Mail2FM. This is a pretty tough one, but there are some third-party tools that may make this possible. Anyway, this is not as high priority as most of the things on this list since I only know of two Newton owners who use Mail2FM (including myself).
+</dd>
+<dt>Add support for Mailsmith (from <a href="http://www.barebones.com/">Bare Bones Software</a>).
+</dt>
+<dd>This has <em>finally</em> shipped, and it does indeed have good scripting support. However, I don’t actually like it much, so probably I’ll leave support to someone else through the plug-in architecture.
+</dd>
+<dt>Allow plug-ins to provide custom handling of certain messages.
+</dt>
+<dd>This idea was inspired by a request to add support for an unusual custom digest format.
+</dd>
+<dt>Support importing of single messages saved as text files. (Requested by <a title="Send mail to this person." href="mailto:stnick@feist.com">John Nicholas</a>.)
+</dt>
+<dd>This would provide a “lowest denominator” import option.
+</dd>
+</dl>
+<h3>Other Stuff</h3>
+<h4>Printable Versions of Web Pages</h4>
+<p>I’ve seen sites that have a link to a printable version of each article, where the nav bar and other such things are absent. This would be really nice for some things I’m working on, so I’ve been thinking about how to do it in Frontier. My first thought was a macro that when called while rendering the “fancy” page, would go off and render the “plain” page and then insert a link to it. On further consideration, I don’t think this will work. Anyway, if I figure something out I’ll post it.</p>

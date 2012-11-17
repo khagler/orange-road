@@ -1,0 +1,46 @@
+---
+title: DocServer DTD
+---
+    
+<h1>Elements</h1>
+<h2>FrontierDocs</h2>
+<h3>Verb</h3>
+<h4>Syntax</h4>
+<p>I&rsquo;m not sure about whitespace here. Probably significant, though. </p>
+<p>There can be more than one syntax element, for cases where there are two ways to do something&thinsp;&ndash;&thinsp;&ldquo;local&rdquo; for instance. </p>
+<h4>Parameter List</h4>
+<p>This is an element which exists only to contain a series of other elements, like HTML lists. </p>
+<h5>Parameter Item</h5>
+<p>Each parameter gets its own list parameter list item. </p>
+<h4>Action</h4>
+<h4>Returns</h4>
+<h4>Examples</h4>
+<p>The Example element would be the place where strange entities would be most likely. </p>
+<p>An Example element can have any number of input/output pairs. This arrangement is like a definition list in HTML. </p>
+<h5>Input</h5>
+<p>Whitespace is significant here. </p>
+<h6>Output</h6>
+<p>Whitespace is significant here. </p>
+<h6>Comment</h6>
+<p>This is a normal text element which describes the example item. </p>
+<h4>Errors</h4>
+<h4>Note List</h4>
+<p>This is an element which exists only to contain a series of other elements, like HTML lists. </p>
+<h5>Note Item</h5>
+<p>Each note gets its own note list item. </p>
+<h4>See Also</h4>
+<p>This is an element which exists only to contain a series of other elements, like HTML lists. </p>
+<h5>Reference</h5>
+<p>Each Reference gets its own reference list item. </p>
+<h1>Entities</h1>
+<p>We getsome of these (&gt;, &lt;, etc.) for free as part of the XML spec it looks like. However, we&rsquo;ll still need more for things specific to Frontier such as the comment character (</p>
+<p>Unfortunately, I have no idea how to specify entities in a DTD. That part of the spec is currently going over my head. </p>
+<h2>comment character</h2>
+<p></p>
+<p>This is very important, since the comment shows up all over the place, in many of the DocServer examples. </p>
+<h2>typographic quotes</h2>
+<p>&ldquo;&rdquo;&lsquo;&rsquo; </p>
+<p>These aren&rsquo;t quite as important. These show up in the DocServer quotes page, I&rsquo;m not sure where else. </p>
+<h2>comparison symbols</h2>
+<p>[not equal][less equal][greater equal] </p>
+<p>These show up in DocServer&rsquo;s pages for &lsquo;&lt;=&rsquo; and &lsquo;&gt;=&rsquo;. </p>

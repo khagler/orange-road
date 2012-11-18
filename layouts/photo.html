@@ -54,12 +54,11 @@
 
     <div id="mainContent">
         <h1><%= @item[:title] %></h1>
-        
         <p class="fltlft">Previous: Previous Title</p>
         <p class="fltrt">Next: Next Title</p>
         <br class="clearfloat" />
 
-        <div class="center"><img height="600" alt="alt txt" src="<%= %>" width="480" border="0" /></div>
+        <div class="center"><%= image_tag(@item) %></div>
         <br class="clearfloat" />
 
         <%= yield %>

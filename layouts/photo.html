@@ -54,8 +54,8 @@
 
     <div id="mainContent">
         <h1><%= @item[:title] %></h1>
-        <p class="fltlft">Previous: Previous Title</p>
-        <p class="fltrt">Next: Next Title</p>
+        <p class="fltlft"><%= previous_link %></p>
+        <p class="fltrt"><%= next_link %></p>
         <br class="clearfloat" />
 
         <div class="center"><%= image_tag %></div>

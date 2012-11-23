@@ -17,6 +17,11 @@ compile '/stylesheet/' do
   # don’t filter or layout
 end
 
+compile %r</Photography/Music/\w+/$> do
+    filter :erb
+    layout 'gallery'
+end
+
 compile '*/Pages/*/' do
    filter :erb
    layout 'photo' 

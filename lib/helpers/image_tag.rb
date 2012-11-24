@@ -9,7 +9,7 @@ module ImageTagMaker
         # of trying to get the parent of the parent of "@item" because that
         # approach didn't work, and I got tired of struggling with trying to
         # figure out why.
-        photo_path = gallery_page.parent.parent + "Images" + photo
+        photo_path = gallery_page.parent + "Images" + photo
         alt_text = "Photo of " + @item[:title]
         img_src = photo_path.relative_path_from(gallery_page)
         gallery_full_path = Pathname.new(@item.rep_named(:default).raw_path)

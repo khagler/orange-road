@@ -6,6 +6,7 @@ module NextPreviousLinks
             # next and previous links.
             return
         end
+        siblings.sort! { |a, b| a[:gallery_order] <=> b[:gallery_order] }
         next_index = siblings.index(@item) + 1
         if siblings[next_index].nil?
             # If we're on the last page of the gallery, "next" will wrap
@@ -22,6 +23,7 @@ module NextPreviousLinks
             # next and previous links.
             return
         end
+        siblings.sort! { |a, b| a[:gallery_order] <=> b[:gallery_order] }
         previous_index = siblings.index(@item) - 1
         return "Previous: " + link_to(siblings[previous_index][:title], siblings[previous_index])
     end

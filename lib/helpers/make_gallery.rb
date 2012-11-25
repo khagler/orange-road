@@ -6,6 +6,7 @@ module MakeGallery
         photo_div = String.new
         images_folder = Pathname.new(@item.rep_named(:default).raw_path).parent + "Images"
         gallery_pages = @items.select { |e| e.identifier.include? @item.identifier + "Pages/" }
+        gallery_pages.sort! { |a, b| a[:gallery_order] <=> b[:gallery_order] }
         gallery_path = Pathname.new(@item.path)
         gallery_pages.each do |photo|
             # Find the thumbnail for this photo.

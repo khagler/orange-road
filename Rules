@@ -22,6 +22,11 @@ compile %r</Photography/Music/\w+/$> do
     layout 'gallery'
 end
 
+compile '/Photography/Miscellaneous' do
+  filter :erb
+  layout 'gallery'
+end
+
 compile '*/Pages/*/' do
    filter :erb
    layout 'photo' 

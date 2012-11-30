@@ -4,6 +4,6 @@ This is the [nanoc](http://nanoc.stoneship.org/) source for my personal website,
 
 ## Requirements
 
-* imagesize
+* image_size
 
-	Used to generate the width and height attributes for `img` tags. To install, `gem install imagesize`.
+	Used to generate the width and height attributes for `img` tags. To install, `gem install image_size`.

@@ -58,7 +58,7 @@
         <p class="fltrt"><%= next_link %></p>
         <br class="clearfloat" />
 
-        <div class="center"><%= image_tag %></div>
+        <div class="center"><%= image_tag("#{@item[:photoID]}.jpg", "Photo of #{@item[:title]}") %></div>
         <br class="clearfloat" />
 
         <%= yield %>

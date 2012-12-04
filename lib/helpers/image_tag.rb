@@ -12,7 +12,7 @@ module ImageTagMaker
     # The path within the nanoc site. Its root is the "content" folder.
     item_path = Pathname.new(@item.path)
     # The full path on the file system.
-    item_full_path = Pathname.new(@item.rep_named(:default).raw_path)
+    item_full_path = Pathname.new(@item.rep_named(:default).raw_path).realpath
 
     # Figuring out where exactly the photo is is complicated by the need to
     # maintain backward compatibility with the existing site structure, where

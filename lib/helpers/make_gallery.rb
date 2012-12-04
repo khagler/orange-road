@@ -9,21 +9,16 @@ module MakeGallery
     gallery_pages.sort! { |a, b| a[:gallery_order] <=> b[:gallery_order] }
     gallery_path = Pathname.new(@item.path)
     gallery_pages.each do |photo|
-      # Find the thumbnail for this photo.
-      thumbnail = photo[:photoID] + "-Thumb.jpg"
-      thumbnail_path = gallery_path + "Images" + thumbnail
-      alt_text = "Thumbnail of " + photo[:title]
-      img_src = thumbnail_path.relative_path_from(gallery_path)
-      thumbnail_size = ImageSize.path(images_folder + thumbnail)
+      img_tag = image_tag(photo[:photoID] + "-Thumb.jpg",
+                          "Thumbnail of " + photo[:title])
             
       # Assemble the HTML to return
       photo_div << %(<div class="thumbnail">\n)
       photo_div << %(<a href="#{relative_path_to(photo)}">)
-      photo_div << %(<img height="#{thumbnail_size.height}" alt="#{alt_text}")
-      photo_div << %(src="#{img_src}" width="#{thumbnail_size.width}" border="0" />)
+      photo_div << %(#{img_tag})
       photo_div << %(</a><br />\n#{photo[:title]}\n)
       photo_div << %(</div>\n\n)
     end
-      photo_div
+    photo_div
   end
 end

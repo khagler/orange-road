@@ -18,8 +18,8 @@ compile '/stylesheet/' do
 end
 
 compile %r</Photography/Music/\w+/$> do
-    filter :erb
-    layout 'gallery'
+  filter :erb
+  layout 'gallery'
 end
 
 compile '/Photography/Miscellaneous' do
@@ -28,8 +28,8 @@ compile '/Photography/Miscellaneous' do
 end
 
 compile '*/Pages/*/' do
-   filter :erb
-   layout 'photo' 
+  filter :erb
+  layout 'photo' 
 end
 
 compile '*' do
@@ -46,20 +46,7 @@ route '/stylesheet/' do
 end
 
 route '*' do
-    item[:filename].gsub(/^content/, '')
+  item[:filename].gsub(/^content/, '')
 end
-
-# route '*' do
-#   if item.binary?
-#     # Write item with identifier /foo/ to /foo.ext
-#     item.identifier.chop + '.' + item[:extension]
-#   else
-#     if item.identifier == '/' then
-#         item.identifier + 'index.html'
-#     else
-#         item.identifier.chop + '.html'
-#     end
-#   end
-# end
 
 layout '*', :erb

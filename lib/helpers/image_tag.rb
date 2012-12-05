@@ -6,8 +6,10 @@ module ImageTagMaker
   # The +image_tag+ method creates an HTML img tag.
   # === Parameters
   # * _photo_ = The file name of the photo
-  # * _alt_text_ = The string to use as the images alt text
-  def image_tag(photo, alt_text)
+  # * _alt_text_ = (Optional) The string to use as the images alt text
+  # * _attributes_ = (Optional) Any HTML attributes (e.g. 'class=') to include
+  #   in the img tag.
+  def image_tag(photo, alt_text='', attributes='')
     images = 'Images'
     # The path within the nanoc site. Its root is the "content" folder.
     item_path = Pathname.new(@item.path)
@@ -33,6 +35,6 @@ module ImageTagMaker
     end
     img_src = photo_path.relative_path_from(item_path)    
     photo_size = ImageSize.path(photo_full_path)
-    %(<img height="#{photo_size.height}" alt="#{alt_text}" src="#{img_src}" width="#{photo_size.width}" border="0" />)
+    %(<img height="#{photo_size.height}" alt="#{alt_text}" src="#{img_src}" width="#{photo_size.width}" border="0" #{attributes} />)
   end
 end

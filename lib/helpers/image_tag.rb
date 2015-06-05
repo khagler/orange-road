@@ -14,7 +14,7 @@ module ImageTagMaker
     # The path within the nanoc site. Its root is the "content" folder.
     item_path = Pathname.new(@item.path)
     # The full path on the file system.
-    item_full_path = Pathname.new(@item.rep_named(:default).raw_path).realdirpath
+    item_full_path = Pathname.new(@item.raw_filename).realdirpath
 
     # Figuring out where exactly the photo is is complicated by the need to
     # maintain backward compatibility with the existing site structure, where
@@ -30,10 +30,10 @@ module ImageTagMaker
       photo_path = Pathname.new('/img').join(photo)
       # We have to get the path to '/img' this way because the directory has
       # no index.html, so as far as nanoc is concerned '/img/' doesn't exist.
-      photo_full_path = Pathname.new(@items.find { |e| e.identifier == '/' } \
-        .rep_named(:default).raw_path).parent.join('img', photo)
+      photo_full_path = Pathname.new(@items['/'].raw_filename).parent.join(
+      	'img', photo)
     end
-    img_src = photo_path.relative_path_from(item_path)    
+    img_src = photo_path.relative_path_from(item_path)
     photo_size = ImageSize.path(photo_full_path)
     %(<img height="#{photo_size.height}" alt="#{alt_text}" src="#{img_src}" width="#{photo_size.width}" border="0" #{attributes} />)
   end
